@@ -2,7 +2,7 @@ import {test as base, expect} from '@playwright/test'
 import { ContactApi } from '../../api/contact.api'
 import { UsersApi } from '../../api/users.api'
 import { UserPayload } from '../../data/addUserPayload'
-import { ContactPayload } from '../../data/contactPayload'
+import { ContactPayload, createContact } from '../../data/contactPayload'
 import { ContactPage } from '../../pages/contact.page'
 import { LoginPage } from '../../pages/login.page'
 import { RegistrationPage } from '../../pages/registration.page'
@@ -31,22 +31,7 @@ export const test = base.extend<Fixtures>({
 
     },
     contactPayload: async({}, use) => {
-        let contactPayload: ContactPayload = {
-            firstName: "John",
-            lastName: "Doe",
-            birthdate: "1970-01-01",
-            email: `jdoe${Date.now()}@fake.com`,
-            phone: "8005555555",
-            street1: "1 Main St.",
-            street2: "Apartment A",
-            city: "Anytown",
-            stateProvince: "KS",
-            postalCode: "12345",
-            country: "USA"
-
-        }
-        await use(contactPayload);
-
+        await use(await createContact());
     },
     token: async({request, userPayload}, use) => {
         let userApi = new UsersApi(request, '');
