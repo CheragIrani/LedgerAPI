@@ -15,7 +15,7 @@ test.describe('Creating contacts test', async () => {
   
   });
 
-  test('Create contact', async ({page, token, usersApi, userPayload, contactPage, contactApi, contactPayload}) => {
+  test('Create contact', async ({page, token, contactPage, contactApi, contactPayload}) => {
     await page.context().addCookies([
         { name: 'token', 
           value: `${token}`, 
