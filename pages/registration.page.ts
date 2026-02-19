@@ -28,6 +28,7 @@ export class RegistrationPage{
 
     async clickSubmit(){
         await this.submitButton.click()
+        await this.page.waitForURL('https://thinking-tester-contact-list.herokuapp.com/contactList');
     }
 
 }

@@ -4,9 +4,12 @@ export class ClientApi{
     protected request: APIRequestContext
     protected token?: string
 
-    constructor(request: APIRequestContext, token: string){
+    constructor(request: APIRequestContext){
         this.request = request
-        this.token = token
+    }
+
+    setToken(token: string) {
+        this.token = token;
     }
 
     async post<T>(url: string, body: unknown = {}): Promise<T>{

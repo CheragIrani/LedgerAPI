@@ -34,18 +34,21 @@ export const test = base.extend<Fixtures>({
         await use(await createContact());
     },
     token: async({request, userPayload}, use) => {
-        let userApi = new UsersApi(request, '');
-        let addUserResp = await userApi.addUser(userPayload);
-        let token = addUserResp.token;
+        let userApi = new UsersApi(request);
+        await userApi.addUser(userPayload);
+        const loginResp = await userApi.login(userPayload)
+        let token = loginResp.token;
         await use(token)
     },
     usersApi: async({request,token}, use) => {
-        let userApi = new UsersApi(request, token);
+        let userApi = new UsersApi(request);
+        userApi.setToken(token)
         await use(userApi);
         await userApi.deleteUser();
     },
     contactApi: async({request, token}, use) => {
-        let contactApi = new ContactApi(request, token);
+        let contactApi = new ContactApi(request);
+        contactApi.setToken(token)
         await use(contactApi);
     },
     registrationPage: async ({page}, use) => {
