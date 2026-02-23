@@ -10,7 +10,7 @@ export async function userDetails(overrides: Partial<UserPayload> = {}):Promise<
     const defaultUserDetails = {
         firstName: 'Test',
         lastName: 'User',
-        email: `test4523${Date.now()}@fake.com`,
+        email: `test${Date.now()}@fake.com`,
         password: 'myPassword'
     }
 

@@ -36,7 +36,7 @@ test.describe('users tests', async () => {
 
       //get contact
       const getContactRespBody: GetAddContactResponse[] = (await contactApi.getContact()).body;
-      const isId = getContactRespBody.find(c => c._id == contactId);
+      const isId = getContactRespBody.find(c => c._id === contactId);
       expect(isId).toBeUndefined()
 
     });
