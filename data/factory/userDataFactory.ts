@@ -1,10 +1,4 @@
-export type UserPayload = {
-    firstName: string
-    lastName: string
-    email: string
-    password: string
-
-}
+import { UserPayload } from "../userData"
 
 export async function userDetails(overrides: Partial<UserPayload> = {}):Promise<UserPayload> {
     const defaultUserDetails = {

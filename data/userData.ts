@@ -7,5 +7,11 @@ export interface AddUserResponse{
         __v: number
     },
     token: string
+}
 
+export type UserPayload = {
+    firstName: string
+    lastName: string
+    email: string
+    password: string
 }

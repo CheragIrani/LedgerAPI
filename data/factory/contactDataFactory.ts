@@ -1,17 +1,4 @@
-export type ContactPayload = {
-    firstName: string,
-    lastName: string,
-    birthdate: string,
-    email: string,
-    phone: string,
-    street1: string,
-    street2?: string,
-    city: string,
-    stateProvince: string,
-    postalCode: string,
-    country: string
-
-}
+import { ContactPayload } from "../contactData"
 
 export async function createContact(overrides: Partial<ContactPayload> = {}): Promise<ContactPayload> {
     const defaultContact: ContactPayload = {
