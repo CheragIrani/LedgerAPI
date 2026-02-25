@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-import { ContactPayload } from "../data/contactPayload";
+import { ContactPayload } from "../data/contactData";
 
 export class ContactPage{
     readonly page: Page

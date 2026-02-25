@@ -1,4 +1,3 @@
-import { AddUserResponse } from '../data/userData';
 import { GetAddContactResponse } from '../data/contactData';
 import { test, expect } from './fixtures/apiFixtures';
 

@@ -1,4 +1,4 @@
-import { APIRequestContext, APIResponse, expect } from "@playwright/test";
+import { APIRequestContext, expect } from "@playwright/test";
 
 export class ClientApi{
     protected request: APIRequestContext

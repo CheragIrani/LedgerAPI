@@ -1,6 +1,6 @@
 import { UserPayload } from "../userData"
 
-export async function userDetails(overrides: Partial<UserPayload> = {}):Promise<UserPayload> {
+export async function createUserDetails(overrides: Partial<UserPayload> = {}):Promise<UserPayload> {
     const defaultUserDetails = {
         firstName: 'Test',
         lastName: 'User',

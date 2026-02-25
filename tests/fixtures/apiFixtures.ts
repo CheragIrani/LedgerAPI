@@ -1,11 +1,13 @@
 import {test as base, expect} from '@playwright/test'
 import { ContactApi } from '../../api/contact.api'
 import { UsersApi } from '../../api/users.api'
-import { UserPayload } from '../../data/addUserPayload'
-import { ContactPayload, createContact } from '../../data/contactPayload'
+import { ContactPayload } from '../../data/contactData'
+import { UserPayload } from '../../data/userData'
+import { createUserDetails } from '../../data/factory/userDataFactory'
 import { ContactPage } from '../../pages/contact.page'
 import { LoginPage } from '../../pages/login.page'
 import { RegistrationPage } from '../../pages/registration.page'
+import { createContactDetails } from '../../data/factory/contactDataFactory'
 
 type Fixtures = {
     token: string,
@@ -21,17 +23,10 @@ type Fixtures = {
 
 export const test = base.extend<Fixtures>({
     userPayload: async({}, use) => {
-        let userPayload: UserPayload = {
-            firstName: 'Test',
-            lastName: 'User',
-            email: `test4523${Date.now()}@fake.com`,
-            password: 'myPassword'
-        }
-        await use(userPayload)
-
+        await use(await createUserDetails())
     },
     contactPayload: async({}, use) => {
-        await use(await createContact());
+        await use(await createContactDetails());
     },
     token: async({request, userPayload}, use) => {
         let userApi = new UsersApi(request);

@@ -1,5 +1,5 @@
 import { GetAddContactResponse } from "../data/contactData";
-import { ContactPayload } from "../data/contactPayload";
+import { ContactPayload } from "../data/contactData";
 import { ClientApi } from "./client.api";
 
 export class ContactApi extends ClientApi{

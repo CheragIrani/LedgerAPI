@@ -1,6 +1,6 @@
 import { ContactPayload } from "../contactData"
 
-export async function createContact(overrides: Partial<ContactPayload> = {}): Promise<ContactPayload> {
+export async function createContactDetails(overrides: Partial<ContactPayload> = {}): Promise<ContactPayload> {
     const defaultContact: ContactPayload = {
         firstName: 'Jimmy',
         lastName: 'Mistry',

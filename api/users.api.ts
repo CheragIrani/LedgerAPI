@@ -1,5 +1,4 @@
-import { AddUserResponse } from "../data/userData"
-import { UserPayload } from "../data/addUserPayload"
+import { AddUserResponse, UserPayload } from "../data/userData"
 import { ClientApi } from "./client.api"
 
 export class UsersApi extends ClientApi{

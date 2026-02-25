@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-import { UserPayload } from "../data/addUserPayload";
+import { UserPayload } from "../data/userData";
 
 export class RegistrationPage{
     readonly page: Page
